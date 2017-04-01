@@ -66,8 +66,8 @@ set_target_properties(loragw PROPERTIES VERSION ${LIBLORAGW_VERSION})
 #-----------------------------------------------------------------------------
 # install targets
 #-----------------------------------------------------------------------------
-install(TARGETS loragw EXPORT Findlibloragw DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
+install(TARGETS loragw EXPORT libloragw-config DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
 install(FILES ${LIB_INTERFACE_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
 install(FILES ${PROJECT_BINARY_DIR}/config.h DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
-install(EXPORT Findlibloragw DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/cmake)
-export(TARGETS loragw FILE Findlibloragw.cmake)
+install(EXPORT libloragw-config DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/cmake/libloragw)
+export(TARGETS loragw FILE libloragw-config.cmake)
