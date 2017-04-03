@@ -58,7 +58,7 @@ target_include_directories(loragw PRIVATE
 )
 
 target_include_directories(loragw INTERFACE
-		$<INSTALL_INTERFACE:include>
+		$<INSTALL_INTERFACE:include/semtech>
 )
 
 set_target_properties(loragw PROPERTIES VERSION ${LIBLORAGW_VERSION})
@@ -67,7 +67,7 @@ set_target_properties(loragw PROPERTIES VERSION ${LIBLORAGW_VERSION})
 # install targets
 #-----------------------------------------------------------------------------
 install(TARGETS loragw EXPORT libloragw-config DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR})
-install(FILES ${LIB_INTERFACE_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
-install(FILES ${PROJECT_BINARY_DIR}/config.h DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+install(FILES ${LIB_INTERFACE_HEADERS} DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/semtech)
+install(FILES ${PROJECT_BINARY_DIR}/config.h DESTINATION ${CMAKE_INSTALL_FULL_INCLUDEDIR}/semtech)
 install(EXPORT libloragw-config DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/cmake/libloragw)
 export(TARGETS loragw FILE libloragw-config.cmake)
